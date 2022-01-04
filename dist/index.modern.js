@@ -1,10 +1,9 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-function Modal({
-  setOpen,
-  message
-}) {
+function Modal(_ref) {
+  var setOpen = _ref.setOpen,
+      message = _ref.message;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -16,7 +15,9 @@ function Modal({
       transform: 'translate(-50%, -50%)',
       position: 'absolute'
     },
-    onClick: () => setOpen(false)
+    onClick: function onClick() {
+      return setOpen(false);
+    }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'fixed',
@@ -36,7 +37,9 @@ function Modal({
       padding: '10px'
     }
   }, /*#__PURE__*/React.createElement("h1", null, message), /*#__PURE__*/React.createElement(Button, {
-    onClick: () => setOpen(false),
+    onClick: function onClick() {
+      return setOpen(false);
+    },
     variant: "contained"
   }, "Ok"))));
 }

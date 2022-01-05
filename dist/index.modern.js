@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 
 function Modal(_ref) {
   var setOpen = _ref.setOpen,
-      message = _ref.message;
+      message = _ref.message,
+      buttonText = _ref.buttonText;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -36,12 +36,11 @@ function Modal(_ref) {
       textAlign: 'center',
       padding: '10px'
     }
-  }, /*#__PURE__*/React.createElement("h1", null, message), /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement("p", null, message), /*#__PURE__*/React.createElement("button", {
     onClick: function onClick() {
       return setOpen(false);
-    },
-    variant: "contained"
-  }, "Ok"))));
+    }
+  }, buttonText))));
 }
 
 export default Modal;

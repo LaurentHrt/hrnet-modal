@@ -1,6 +1,5 @@
 import React from 'react'
 // import styles from './styles.module.css'
-import Button from '@mui/material/Button'
 
 export default function Modal({ setOpen, message, buttonText }) {
   return (
@@ -37,10 +36,8 @@ export default function Modal({ setOpen, message, buttonText }) {
             padding: '10px'
           }}
         >
-          <h1>{message}</h1>
-          <Button onClick={() => setOpen(false)} variant='contained'>
-            {buttonText}
-          </Button>
+          <p>{message}</p>
+          <button onClick={() => setOpen(false)}>{buttonText}</button>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 // import styles from './styles.module.css'
 import Button from '@mui/material/Button'
 
-export default function Modal({ setOpen, message }) {
+export default function Modal({ setOpen, message, buttonText }) {
   return (
     <div
       style={{
@@ -39,7 +39,7 @@ export default function Modal({ setOpen, message }) {
         >
           <h1>{message}</h1>
           <Button onClick={() => setOpen(false)} variant='contained'>
-            Ok
+            {buttonText}
           </Button>
         </div>
       </div>

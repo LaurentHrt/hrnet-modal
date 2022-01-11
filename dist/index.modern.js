@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Modal(_ref) {
-  var setOpen = _ref.setOpen,
-      message = _ref.message,
-      buttonText = _ref.buttonText;
+function Modal({
+  setOpen,
+  message,
+  buttonText
+}) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
       backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -13,11 +14,9 @@ function Modal(_ref) {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      position: 'absolute'
+      position: 'fixed'
     },
-    onClick: function onClick() {
-      return setOpen(false);
-    }
+    onClick: () => setOpen(false)
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'fixed',
@@ -37,9 +36,7 @@ function Modal(_ref) {
       padding: '10px'
     }
   }, /*#__PURE__*/React.createElement("p", null, message), /*#__PURE__*/React.createElement("button", {
-    onClick: function onClick() {
-      return setOpen(false);
-    }
+    onClick: () => setOpen(false)
   }, buttonText))));
 }
 

@@ -15,7 +15,7 @@ function Modal(_ref) {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      position: 'absolute'
+      position: 'fixed'
     },
     onClick: function onClick() {
       return setOpen(false);

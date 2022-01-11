@@ -12,7 +12,7 @@ export default function Modal({ setOpen, message, buttonText }) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        position: 'absolute'
+        position: 'fixed'
       }}
       onClick={() => setOpen(false)}
     >

@@ -14,14 +14,18 @@ npm install --save hrnet-modal
 
 ```jsx
 import React, { Component } from 'react'
+import Modal from '@laurenthrt/hrnet-modal'
 
-import MyComponent from 'hrnet-modal'
-import 'hrnet-modal/dist/index.css'
+function Example() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+  return (
+    <Modal
+      setOpen={setModalIsOpen}
+      message='Employee created'
+      buttonText='Close'
+    />
+  )
 }
 ```
 

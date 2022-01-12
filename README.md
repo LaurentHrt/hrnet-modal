@@ -13,7 +13,6 @@ npm install --save @laurenthrt/hrnet-modal
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
 import Modal from '@laurenthrt/hrnet-modal'
 
 function Example() {

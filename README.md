@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save hrnet-modal
+npm install --save @laurenthrt/hrnet-modal
 ```
 
 ## Usage

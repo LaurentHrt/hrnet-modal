@@ -1,9 +1,22 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material';
+import red from '@mui/material/colors/red';
 
-function Modal(_ref) {
-  var setOpen = _ref.setOpen,
-      message = _ref.message,
-      buttonText = _ref.buttonText;
+function Modal({
+  setOpen,
+  message,
+  buttonText
+}) {
+  const ColorButton = styled(Button)(({
+    theme
+  }) => ({
+    color: theme.palette.getContrastText(red[900]),
+    backgroundColor: red[900],
+    '&:hover': {
+      backgroundColor: red[700]
+    }
+  }));
   return /*#__PURE__*/React.createElement("div", {
     style: {
       backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -15,9 +28,7 @@ function Modal(_ref) {
       transform: 'translate(-50%, -50%)',
       position: 'fixed'
     },
-    onClick: function onClick() {
-      return setOpen(false);
-    }
+    onClick: () => setOpen(false)
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'fixed',
@@ -27,19 +38,21 @@ function Modal(_ref) {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      width: '250px',
+      width: '200px',
       height: '200px',
       background: 'white',
       zIndex: '9999',
       borderRadius: '16px',
       boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.04)',
       textAlign: 'center',
-      padding: '10px'
+      padding: '10px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between'
     }
-  }, /*#__PURE__*/React.createElement("p", null, message), /*#__PURE__*/React.createElement("button", {
-    onClick: function onClick() {
-      return setOpen(false);
-    }
+  }, /*#__PURE__*/React.createElement("p", null, message), /*#__PURE__*/React.createElement(ColorButton, {
+    onClick: () => setOpen(false),
+    variant: "contained"
   }, buttonText))));
 }
 

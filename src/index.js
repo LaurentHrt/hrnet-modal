@@ -1,6 +1,17 @@
 import React from 'react'
+import Button from '@mui/material/Button'
+import { styled } from '@mui/material'
+import red from '@mui/material/colors/red'
 
 export default function Modal({ setOpen, message, buttonText }) {
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(red[900]),
+    backgroundColor: red[900],
+    '&:hover': {
+      backgroundColor: red[700]
+    }
+  }))
+
   return (
     <div
       style={{
@@ -25,18 +36,23 @@ export default function Modal({ setOpen, message, buttonText }) {
       >
         <div
           style={{
-            width: '250px',
+            width: '200px',
             height: '200px',
             background: 'white',
             zIndex: '9999',
             borderRadius: '16px',
             boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.04)',
             textAlign: 'center',
-            padding: '10px'
+            padding: '10px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
           }}
         >
           <p>{message}</p>
-          <button onClick={() => setOpen(false)}>{buttonText}</button>
+          <ColorButton onClick={() => setOpen(false)} variant='contained'>
+            {buttonText}
+          </ColorButton>
         </div>
       </div>
     </div>
